@@ -24,9 +24,9 @@
                         <li class="dropdown">
                           <a href="#" class="dropbtn">About Us  <img src="../assets/dropdown.svg" alt=""></a>
                           <div class="dropdown-content">
-                            <a href="#">a</a>
-                            <a href="#">b</a>
-                            <a href="#">c</a>
+                            <a href="#">CONTACT US</a>
+                            <a href="#">LOCATION</a>
+                            <a href="#">OUR AGENTS</a>
                           </div>
                         </li>
                       </ul>
@@ -55,7 +55,7 @@
                           <div class="dropdown-content">
                             <a href="#">Event center/venue</a>
                             <a href="../Flat/Flat.html">Flats</a>
-                            <a href="House.html">House</a>
+                            <a href="../House/House.html">House</a>
                             <a href="">Commercial Property</a>
                             <a href="../Land/Land.html">Land</a>
                           </div>
@@ -98,9 +98,9 @@
                         <li class="dropdown">
                           <a href="#" class="dropbtn">Location  <img src="../assets/dropdown.svg" alt=""></a>
                           <div class="dropdown-content">
-                            <a href="./Contact/contact.html">Contact Us</a>
-                            <a href="#">Our Agents</a>
-                            <a href="#">Location</a>
+                            <a href="#">Lagos</a>
+                            <a href="#">Ibadan</a>
+                            <a href="#">Ogun</a>
                           </div>
                         </li>
                       </ul>
@@ -129,9 +129,9 @@
                         <li class="dropdown">
                           <a href="#" class="dropbtn">Agents</a>
                           <div class="dropdown-content">
-                            <a href="#">a</a>
-                            <a href="#">b</a>
-                            <a href="#">c</a>
+                            <a href="#">CONTACT US</a>
+                            <a href="#">OUR AGENTS</a>
+                            <a href="#">LOCATIONS</a>
                           </div>
                         </li>
                       </ul>
@@ -147,19 +147,143 @@
 
     <section>
         <div class="heading">
-            <h1>HOUSES</h1>
+            <h1>Our Agents</h1>
         </div>
 
-        <div class="houses" >
+        <div class="land" >
             
             
             
         </div>
+        <div class="detail">
 
+        </div>
     
     </section>
 
-    <script src="../script.js"></script>
+    <div class="cover">
+
+    </div>
+
+  
+
+    <script>
+        const landMap = document.querySelector('.land')
+        const cover = document.querySelector('.cover')
+        
+        let landArray =[
+    {
+        id: 1 ,
+        img: '/assets/lands pics/ikeja6.jpg',
+        title: 'Front End Developer',
+        description: 'Ayandiran Daniel'
+    },
+    {
+        id: 2 ,
+        img: '/assets/lands pics/Ilupeju.jpeg',
+        title: 'Back End developer',
+        description: 'Adeyemi Olakunle'
+
+    },
+    {
+        id: 3,
+        img: '/assets/lands pics/lekki phase 1.webp',
+        title: 'Product Desinger ',
+        description: 'Gbolahun'
+
+    },
+    {   id: 4,
+        img: '/assets/lands pics/Magodo2.webp',
+        title: 'Marketer',
+        description: 'Angella '
+
+    },
+    {   id: 5,
+        img: '/assets/lands pics/magodo4.jpeg',
+        title: 'Front End developer',
+        description: 'Rez '
+
+    },
+    {   id: 6,
+        img: '/assets/lands pics/Ogba.jpeg',
+        title: '70 Million',
+        description: 'At ajah Badoro'
+
+    },
+]
+
+
+
+landArray.map((val)=>{
+
+landMap.innerHTML += `
+     <div class="houses-box"  >
+        <img src="${val.img}" alt="">
+        <div class="description">
+            <h3>${val.title}</h3>
+        </div>
+        <div class="description-text">
+            <p>${val.description}</p>
+        </div>
+       
+    </div>
+`
+})
+const detail = document.querySelector('.detail')
+let show  = false
+
+const closeCover = () =>{
+  cover.style.display = 'none'
+  console.log('non')
+}
+
+cover.addEventListener('click' , ()=>{
+  cover.style.display= 'none'
+  detail.style.display = 'none'
+})
+
+const oneHouse = (id) =>{
+  localStorage.setItem('id'  , id)
+  let houseId  = localStorage.getItem('id')
+
+  show =  true 
+  cover.style.display = 'block'
+  detail.style.display = 'block'
+  landArray.filter((val)=>{
+    return val.id == +houseId
+    }).map((val)=>{
+    detail.innerHTML = `
+    <div class="houses-detail" onclick="oneHouse(${val.id})" >
+       <img src="${val.img}" alt="">
+       <div class="description">
+           <h3>${val.title}</h3>
+       </div>
+       <div class="description-text">
+           <p>${val.description}</p>
+       </div>
+       <div class="details-num">
+      <p>Phone Number: 07067074988</p>
+      
+    </div>
+       <div class="details-num">
+      <p>Hecters: 10km</p>
+      
+    </div>
+
+    
+   </div>
+
+`
+})
+  
+}
+
+
+
+
+
+
+    </script>
 
 </body>
 </html>

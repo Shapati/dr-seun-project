@@ -161,21 +161,22 @@
                     </div>
                     <div class="form-group">
                         <label for="">Full Name</label>
-                        <input type="text" required>
+                        <input type="text" name="fullname"   id="1" required>
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="text" required>
+                        <input type="text" name="email"  id="2" required>
                     </div>
                     <div class="form-group">
                         <label for="">Phone Number</label>
-                        <input type="text" required>
+                        <input type="text" name="phone" id="3" required>
                     </div>
                     <div class="form-group">
                         <label for="">Password</label>
-                        <input type="text" required>
+                        <input type="text" name="password" id="4" required>
                     </div>
-                    <button class="sign-btn">Sign up</button>
+                    <button class="sign-btn" type="submit">Sign up</button>
+                
                     <p class="signup-cto">Already have an account?  <a href="../login/login.html">Login</a></p>
 
                    
@@ -184,6 +185,59 @@
                  
             </div>
     </div>
+
+
+    <script>
+        const input1 = document.getElementById('1').value
+        const input2 = document.getElementById('2').value
+        const input3 = document.getElementById('3').value
+        const input4 = document.getElementById('4').value
+        const form = document.querySelector('form')
+        const button = document.querySelector('.sign-btn')
+        const formm = {input1 , input2 , input3 , input4}
+        console.log(input1)
+        let pending= false
+
+        const signUpUser = () =>{
+          
+            button.textContent = `
+                 loading....
+            `
+
+            setTimeout(()=>{
+
+
+              window.location.href = "./addHouse/addHouse.html";
+              
+              let pending = false
+              
+              try{
+
+                    const request = new XMLHttpRequest()
+                    request.open('localhost:8080/signup/auth/users' , 'POST' , formm)
+                    request.send()
+
+                    request.addEventListener('load'  , ()=>{
+                        if(request.data) {
+                            
+                            let data = request.data
+                        }
+                    })  
+
+
+                    }catch(err){
+                    console.warn(err)
+                    }
+            }, 3000)
+          
+            
+        }
+
+         form.addEventListener('submit' , (e)=>{
+          e.preventDefault()
+            signUpUser()  
+         })
+    </script>
 
 </body>
 </html>
