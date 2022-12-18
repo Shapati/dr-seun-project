@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
     <nav>
         <div class="nav-left">
          
-                <h1>Logo</h1>
+                <h1><img src="./assets/logo.jpg" alt=""></h1>
             
         </div>
         <div class="nav-right">
@@ -24,9 +26,9 @@
                         <li class="dropdown">
                           <a href="#" class="dropbtn">About Us  <img src="./assets/dropdown.svg" alt=""></a>
                           <div class="dropdown-content">
-                            <a href="#">a</a>
-                            <a href="#">b</a>
-                            <a href="#">c</a>
+                            <a href="#">CONTACT US</a>
+                            <a href="#">OUR AGENTS</a>
+                            <a href="#">LOCATION</a>
                           </div>
                         </li>
                       </ul>
@@ -39,8 +41,8 @@
                           <a href="#" class="dropbtn">For Sale  <img src="./assets/dropdown.svg" alt=""></a>
                           <div class="dropdown-content">
                             <a href="./House/House.html">House</a>
-                            <a href="#">Land</a>
-                            <a href="#">Flats</a>
+                            <a href="./Land/Land.html">Land</a>
+                            <a href="./Flat/Flat.html">Flats</a>
                             <a href="#">Commercial property</a>
                           </div>
                         </li>
@@ -54,10 +56,10 @@
                           <a href="#" class="dropbtn">For Rent <img src="./assets/dropdown.svg" alt=""></a>
                           <div class="dropdown-content">
                             <a href="#">Event center/venue</a>
-                            <a href="#">Falts</a>
-                            <a href="">House</a>
+                            <a href="Flat/Flat.html">Flats</a>
+                            <a href="House/House.html">House</a>
                             <a href="">Commercial Property</a>
-                            <a href="">Land</a>
+                            <a href="Land/Land.html">Land</a>
                           </div>
                         </li>
                       </ul>
@@ -69,9 +71,9 @@
                         <li class="dropdown">
                           <a href="#" class="dropbtn">Short let  <img src="./assets/dropdown.svg" alt=""></a>
                           <div class="dropdown-content">
-                            <a href="#">House</a>
-                            <a href="#">Land</a>
-                            <a href="#">Flats</a>
+                            <a href="House/House.html">House</a>
+                            <a href="Land/Land.html">Land</a>
+                            <a href="Flat/Flat.html">Flats</a>
                             <a href="#">Commercial property</a>
                           </div>
                         </li>
@@ -146,14 +148,16 @@
     </nav>
 
     <section class="intro-section">
-        <div class="intro-section-left">
+        <div class="intro-section-left" data-aos="fade-up" data-aos-duration="1500">
             <h1><span>Nigerian Real Estate Search </span> , sub reviews and local Q&A </h1>
             <p>Find Hundred and thousands of properties for sale and rent. New Homes listed daily </p>
             <button class="signup-btn"> <a href="" >Signup</a> </button>
         </div>
       
 
-        </div>
+       <div class="intro-section-right" data-aos="fade-left" data-aos-duration="3000">
+        <img src="./assets/pink.svg" alt="">
+       </div>
     </section>
 
     <div class="houses" >
@@ -234,7 +238,10 @@
         </div>
     </div>
     </footer>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
     <script src="./script.js"></script>
     <script src="./detail.js"></script>
 </body>

@@ -12,6 +12,12 @@
     --black-color: rgb(16, 16, 16);
 }
 
+html {
+    scrollbar-width: none;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
 body{
     font-family: 'Poppins'  , sans-serif;
     overflow-x: hidden;
@@ -26,6 +32,10 @@ nav{
     margin: 0px auto;
     padding-top: 30px;
     height: 120px;
+}
+
+.nav-left img{
+    width: 60px;
 }
 
 .nav-links{
@@ -122,6 +132,8 @@ ul {
 .intro-section{
     width: 1250px;
     margin: 70px auto;
+    display: flex;
+    justify-content: space-between;
 }
 .intro-section-left{
     width: 600px;
@@ -144,7 +156,10 @@ ul {
     color: var(--black-color);
     width: 80%;
 }
-
+.intro-section-right img{
+    width: 500px;
+    /* filter: invert(23%) sepia(77%) saturate(7437%) hue-rotate(318deg) brightness(95%) contrast(114%); */
+}
 /* ending of introsection styling */
 
 .home-features{
@@ -267,10 +282,10 @@ footer{
 }
 
 
-.houses{
+.houses, .land , .flat{
   
 
-    padding: 10px 20px;
+
    
     width: 1250px;
     margin: 0px auto 38px auto;
@@ -282,10 +297,13 @@ footer{
     justify-content: space-between;
     margin-top: 20px;
 }
+.houses::-webkit-scrollbar {
+    display: none;
+  }
 .houses-box{
     width: 300px;
     height: 350px;
-    border: 1px solid;
+    border: 1px solid grey;
     padding: 15px;
     border-radius: 5px;
     margin-left: 10px;
